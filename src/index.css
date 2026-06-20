@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --gold: #d4af6a;
+  --gold-light: #e8c87a;
+  --gold-deep: #b8893b;
+  --ink: #1a1714;
+  --cream: #f7f3ec;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  background-color: #f7f3ec;
+  color: #1a1714;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.text-gold {
+  color: var(--gold-deep);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #e8c87a 0%, #d4af6a 45%, #b8893b 100%);
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #e8c87a 0%, #d4af6a 50%, #b8893b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Slow zoom for hero */
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.12); }
+}
+.animate-slow-zoom {
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #1a1714; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#d4af6a, #b8893b); border-radius: 10px; }
+
+::selection {
+  background: #d4af6a;
+  color: #1a1714;
+}
